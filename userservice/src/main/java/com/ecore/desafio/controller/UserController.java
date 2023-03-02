@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,4 +29,17 @@ public class UserController {
 		UserDTO[] users = response.getBody();
 		return Arrays.asList(users);
 	}
+	
+	@GetMapping("/users/{id}")
+	public UserDTO getUser(@PathVariable String id) {
+		String uri = "https://cgjresszgg.execute-api.eu-west-1.amazonaws.com/users/" + id;
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<UserDTO> response =
+				  restTemplate.getForEntity(
+				  uri,
+				  UserDTO.class);
+		UserDTO user = response.getBody();
+		return user;
+	}
+	
 }
