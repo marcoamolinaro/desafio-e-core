@@ -36,3 +36,4 @@ public class PredefinedRole {
 		this.name = name;
 	}
 }
+

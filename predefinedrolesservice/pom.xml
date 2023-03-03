@@ -12,7 +12,7 @@
 	<artifactId>predefinedrolesservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>predefinedrolesservice</name>
-	<description>temservice - Desavio eCore para Marco A Molinaro</description>
+	<description>predefinedrolesservice- Desavio eCore para Marco A Molinaro</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -33,8 +33,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
