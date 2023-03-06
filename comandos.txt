@@ -4,6 +4,15 @@ docker build -f Dockerfile -t user_app .
 docker build -f Dockerfile -t team_app .
 docker build -f Dockerfile -t predefinedrole_app .
 
+Push to Docker Hub
+docker tag user_app mam1963/userservice 
+docker tag team_app mam1963/teamservice 
+docker tag predefinedrole_app mam1963/predefinedroleservice 
+
+docker push mam1963/userservice
+docker push mam1963/teamservice
+docker push mam1963/predefinedroleservice
+
 Executar 
 docker run -t -p 8081:8081 user_app 
 docker run -t -p 8081:8081 mam1963/userservice 
@@ -15,11 +24,3 @@ docker run -t -p 8083:8083 mam1963/predefinedroleservice
 # se for necessário linkar com db: adicionar --link docker-mysql:mysql
 # se for necessário linkar com outro serviço:  --link <nome-do-serviço>
 
-Push to Docker Hub
-docker tag user_app mam1963/userservice 
-docker tag team_app mam1963/teamservice 
-docker tag predefinedrole_app mam1963/predefinedroleservice 
-
-docker push mam1963/userservice
-docker push mam1963/teamservice
-docker push mam1963/predefinedroleservice
